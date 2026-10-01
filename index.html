@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diyetisyen Esma Tan | Dijital Kartvizit</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts - Lüks El Yazısı ve Modern Fontlar -->
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome İkonları -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --bg-color: #f2f5f3;
+            --bg-color: #f2f7f4;
             --card-bg: #ffffff;
-            --primary-dark: #133022;
-            --primary-green: #1f4e38;
-            --accent-green: #40916c;
-            --light-green-bg: #f4f8f5;
-            --border-color: #e2ece6;
+            --primary-dark: #1b4332;
+            --primary-green: #2d6a4f;
+            --accent-green: #52b788;
+            --soft-green-bg: rgba(243, 248, 244, 0.9);
+            --border-color: #d8e8dc;
             --text-main: #2b2b2b;
             --text-muted: #666666;
         }
@@ -31,138 +31,183 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg-color);
-            background-image: radial-gradient(#d1e2d7 1px, transparent 1px);
-            background-size: 28px 28px;
+            background-image: radial-gradient(#cce3d1 1px, transparent 1px);
+            background-size: 32px 32px;
             color: var(--text-main);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 15px;
         }
 
         .phone-container {
             width: 100%;
-            max-width: 420px;
+            max-width: 440px;
             background: var(--card-bg);
-            border-radius: 36px;
-            box-shadow: 0 20px 45px rgba(19, 48, 34, 0.1);
+            border-radius: 35px;
+            box-shadow: 0 20px 50px rgba(27, 67, 50, 0.15);
             overflow: hidden;
             border: 1px solid var(--border-color);
+            position: relative;
         }
 
-        /* Üst Header / Logo & İsim Alanı */
-        .header {
-            background: linear-gradient(145deg, #eaf2ed 0%, #f7faf7 100%);
-            padding: 35px 20px 25px;
+        /* Üst Banner */
+        .header-banner {
+            width: 100%;
+            height: 160px;
+            background: url('https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+            position: relative;
+        }
+
+        .header-banner::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(27, 67, 50, 0.2), rgba(255, 255, 255, 0.95) 90%);
+        }
+
+        /* Header İçeriği (İsim ve Logo) */
+        .header-content {
+            padding: 0 24px 20px;
             text-align: center;
+            position: relative;
+            margin-top: -45px;
+            z-index: 2;
             border-bottom: 1px solid var(--border-color);
+            background: #ffffff;
         }
 
         .logo-badge {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             background: var(--primary-dark);
             color: #fff;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 15px;
-            font-size: 1.8rem;
-            box-shadow: 0 8px 20px rgba(19, 48, 34, 0.15);
-            border: 3px solid #fff;
+            margin: 0 auto 12px;
+            font-size: 2rem;
+            box-shadow: 0 8px 25px rgba(27, 67, 50, 0.25);
+            border: 4px solid #ffffff;
         }
 
         .badge-title {
-            font-size: 0.7rem;
+            font-size: 0.72rem;
             text-transform: uppercase;
             letter-spacing: 3px;
-            color: var(--accent-green);
+            color: var(--primary-green);
             font-weight: 700;
             margin-bottom: 4px;
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
+            font-size: 2.3rem;
             color: var(--primary-dark);
             font-weight: 600;
-            letter-spacing: -0.5px;
+            margin-bottom: 6px;
         }
 
+        .divider-custom {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 8px 0;
+            color: var(--accent-green);
+        }
+
+        .divider-custom::before, .divider-custom::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+            max-width: 50px;
+        }
+
+        .subtitle-script {
+            font-family: 'Alex Brush', cursive;
+            font-size: 1.6rem;
+            color: var(--primary-green);
+            margin-top: 2px;
+        }
+
+        /* İÇERİK ALANI (Renkli Kalpler, Meyve ve Sebze Çizimleri) */
         .content {
-            padding: 25px 22px;
+            padding: 24px;
+            position: relative;
+            background-color: #ffffff;
+            /* SVG ile renkli kalpler, narenciye, çilek/domates ve yeşillik desenleri */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 100 100' opacity='0.16'%3E%3Cg fill='none' stroke-width='1.5'%3E%3C!-- Renkli Kalpler --%3E%3Cpath stroke='%23e07a5f' fill='%23e07a5f' fill-opacity='0.2' d='M20 15 C 15 8, 5 12, 10 20 C 13 25, 20 30, 20 30 C 20 30, 27 25, 30 20 C 35 12, 25 8, 20 15 Z'/%3E%3Cpath stroke='%2352b788' fill='%2352b788' fill-opacity='0.2' d='M80 75 C 75 68, 65 72, 70 80 C 73 85, 80 90, 80 90 C 80 90, 87 85, 90 80 C 95 72, 85 68, 80 75 Z'/%3E%3C!-- Sebze / Yaprak --%3E%3Cpath stroke='%232d6a4f' d='M15 55 Q 25 40, 35 55 T 55 55'/%3E%3Cpath stroke='%232d6a4f' d='M25 55 Q 25 70, 15 75'/%3E%3C!-- Narenciye / Meyve Kesiti --%3E%3Ccircle cx='75' cy='30' r='10' stroke='%23f4a261' fill='%23f4a261' fill-opacity='0.15'/%3E%3Cpath stroke='%23f4a261' d='M75 20 L75 40 M65 30 L85 30'/%3E%3C!-- Çilek / Domates --%3E%3Cpath stroke='%23d9534f' fill='%23d9534f' fill-opacity='0.2' d='M45 80 C 40 70, 55 65, 50 80 Z'/%3E%3Cpath stroke='%232d6a4f' d='M46 65 L50 63 L54 65'/%3E%3C/g%3E%3C/svg%3E");
         }
 
-        /* İletişim Listesi */
+        /* İletişim Kartları */
         .contact-list {
             list-style: none;
-            margin-bottom: 22px;
+            margin-bottom: 24px;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            background: #fafcfb;
-            padding: 13px 16px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 14px 16px;
             border-radius: 16px;
             margin-bottom: 12px;
             text-decoration: none;
             color: var(--text-main);
             transition: all 0.25s ease;
             border: 1px solid #edf4f0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
         }
 
         .contact-item:hover {
-            background: var(--light-green-bg);
+            background: var(--soft-green-bg);
             border-color: var(--accent-green);
             transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(31, 78, 56, 0.06);
+            box-shadow: 0 6px 15px rgba(45, 106, 79, 0.08);
         }
 
         .contact-icon {
-            width: 40px;
-            height: 40px;
+            width: 42px;
+            height: 42px;
             background: var(--primary-green);
             color: #fff;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 14px;
-            font-size: 1rem;
+            margin-right: 15px;
+            font-size: 1.05rem;
             flex-shrink: 0;
-            box-shadow: 0 4px 10px rgba(31, 78, 56, 0.15);
+            box-shadow: 0 4px 12px rgba(45, 106, 79, 0.2);
         }
 
         .contact-icon.instagram {
             background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
         }
 
-        .contact-icon.email { background: #d9534f; }
+        .contact-icon.email { background: #e07a5f; }
         .contact-icon.location { background: #2a9d8f; }
 
         .contact-details h4 {
             font-size: 0.68rem;
             color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 0.8px;
+            letter-spacing: 1px;
             margin-bottom: 2px;
-        }
-
-        .contact-details p {
-            font-size: 0.92rem;
-            font-weight: 600;
-            color: var(--primary-dark);
-            word-break: break-all;
-            line-height: 1.3;
         }
 
         .address-main {
             font-weight: 600;
             color: var(--primary-dark);
             display: block;
+            font-size: 0.9rem;
         }
 
         .address-sub {
@@ -170,32 +215,51 @@
             color: var(--text-muted);
             font-weight: 500;
             display: block;
-            margin-top: 1px;
+            margin-top: 2px;
         }
 
-        /* Premium Çalışma Saatleri Tasarımı */
+        .contact-details p {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            word-break: break-all;
+        }
+
+        /* Premium Çalışma Saatleri */
         .hours-box {
-            background: #fafcfb;
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 18px;
             padding: 18px;
-            margin-bottom: 22px;
+            margin-bottom: 20px;
             border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .hours-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent-green);
         }
 
         .hours-title {
             display: flex;
             align-items: center;
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             font-weight: 700;
             color: var(--primary-dark);
-            margin-bottom: 12px;
-            letter-spacing: 0.3px;
+            margin-bottom: 14px;
         }
 
         .hours-title i {
             margin-right: 8px;
             color: var(--accent-green);
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
         .hours-table {
@@ -208,9 +272,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.83rem;
-            padding: 5px 0;
-            border-bottom: 1px solid #edf4f0;
+            font-size: 0.85rem;
+            padding: 3px 0;
+            border-bottom: 1px dashed #e2ede5;
         }
 
         .hours-row:last-child {
@@ -225,75 +289,51 @@
         .day-time {
             font-weight: 600;
             color: var(--primary-dark);
-            background: #eef4f0;
-            padding: 3px 8px;
+            background: #eaf2ed;
+            padding: 3px 10px;
             border-radius: 6px;
             font-size: 0.8rem;
         }
 
-        /* Rehbere Kaydet Butonu */
-        .actions {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-            padding: 15px;
-            border-radius: 16px;
-            font-size: 0.98rem;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.25s ease;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-dark);
-            color: #ffffff;
-            border: none;
-            box-shadow: 0 6px 20px rgba(19, 48, 34, 0.2);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-green);
-            transform: translateY(-2px);
+        .day-time.closed {
+            color: #d9534f;
+            background: #fdf2f2;
         }
 
         .footer-quote {
             text-align: center;
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 0.88rem;
-            color: var(--accent-green);
-            margin-top: 22px;
-            margin-bottom: 4px;
+            font-size: 0.95rem;
+            color: var(--primary-green);
+            margin-top: 20px;
+            margin-bottom: 5px;
         }
 
         .footer-heart {
-            color: #d9534f;
-            font-size: 0.75rem;
+            color: #e07a5f;
+            font-size: 0.8rem;
         }
     </style>
 </head>
 <body>
 
     <div class="phone-container">
-        <!-- Header / Kartvizit Üst Kısım -->
-        <div class="header">
+        <!-- Üst Banner -->
+        <div class="header-banner"></div>
+
+        <!-- Başlık ve Logo Alanı -->
+        <div class="header-content">
             <div class="logo-badge">
                 <i class="fa-solid fa-leaf"></i>
             </div>
             <div class="badge-title">Diyetisyen</div>
             <h1>Esma Tan</h1>
+            <div class="divider-custom"><i class="fa-solid fa-seedling" style="font-size: 0.7rem;"></i></div>
+            <div class="subtitle-script">Doğru beslen, sağlıklı yaşa...</div>
         </div>
 
-        <!-- İçerik Alanı -->
+        <!-- İçerik Alanı (Renkli İllüstrasyonlar ile Güncellendi) -->
         <div class="content">
             
             <!-- İletişim Bilgileri -->
@@ -307,15 +347,6 @@
                     </div>
                 </a>
 
-                <!-- E-posta -->
-                <a href="mailto:dyt.esmatan@gmail.com" class="contact-item">
-                    <div class="contact-icon email"><i class="fa-solid fa-envelope"></i></div>
-                    <div class="contact-details">
-                        <h4>E-Posta</h4>
-                        <p>dyt.esmatan@gmail.com</p>
-                    </div>
-                </a>
-
                 <!-- Instagram -->
                 <a href="https://instagram.com/dyt.esmatan" target="_blank" class="contact-item">
                     <div class="contact-icon instagram"><i class="fa-brands fa-instagram"></i></div>
@@ -325,7 +356,16 @@
                     </div>
                 </a>
 
-                <!-- Adres (Düzenlenmiş Premium Görünüm) -->
+                <!-- E-posta -->
+                <a href="mailto:dyt.esmatan@gmail.com" class="contact-item">
+                    <div class="contact-icon email"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="contact-details">
+                        <h4>E-Posta</h4>
+                        <p>dyt.esmatan@gmail.com</p>
+                    </div>
+                </a>
+
+                <!-- Adres -->
                 <a href="https://maps.google.com/?q=Hürriyet+Mah.+İstasyon+Cd.+No:28+Kat:1+Daire:2+Tire+İzmir" target="_blank" class="contact-item">
                     <div class="contact-icon location"><i class="fa-solid fa-location-dot"></i></div>
                     <div class="contact-details" style="width: 100%;">
@@ -336,7 +376,7 @@
                 </a>
             </ul>
 
-            <!-- Premium Çalışma Saatleri -->
+            <!-- Çalışma Saatleri -->
             <div class="hours-box">
                 <div class="hours-title">
                     <i class="fa-regular fa-clock"></i> Çalışma Saatleri
@@ -348,49 +388,16 @@
                     <div class="hours-row"><span class="day-name">Perşembe</span><span class="day-time">12:00 - 19:30</span></div>
                     <div class="hours-row"><span class="day-name">Cuma</span><span class="day-time">08:30 - 19:30</span></div>
                     <div class="hours-row"><span class="day-name">Cumartesi</span><span class="day-time">08:30 - 13:30</span></div>
+                    <div class="hours-row"><span class="day-name">Pazar</span><span class="day-time closed">Kapalı</span></div>
                 </div>
             </div>
 
-            <!-- Rehbere Kaydet Butonu -->
-            <div class="actions">
-                <button class="btn btn-primary" onclick="downloadVCard()">
-                    <i class="fa-solid fa-user-plus"></i> Rehbere Kaydet
-                </button>
-            </div>
-
+            <!-- Slogan Kısmı -->
             <div class="footer-quote">
-                "Doğru beslen, sağlıklı yaşa... <span class="footer-heart">♥</span>"
+                "Sağlıklı yaşam sizin elinizde... <span class="footer-heart">♥</span>"
             </div>
 
         </div>
     </div>
-
-    <!-- VCard Rehbere Ekleme Scripti -->
-    <script>
-        function downloadVCard() {
-            const vcard = `BEGIN:VCARD
-VERSION:3.0
-FN:Dyt. Esma Tan
-N:Tan;Esma;;Dyt.;
-ORG:Diyetisyen Esma Tan
-TITLE:Diyetisyen
-TEL;TYPE=WORK,VOICE:05050903494
-EMAIL;TYPE=INTERNET:dyt.esmatan@gmail.com
-URL;TYPE=Instagram:https://instagram.com/dyt.esmatan
-ADR;TYPE=WORK:;;Hürriyet Mah. İstasyon Cd. No:28 Kat:1 Daire:2;Tire;İzmir;;Türkiye
-NOTE:Sağlıklı beslenme daha iyi bir sen.
-END:VCARD`;
-
-            const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'Dyt_Esma_Tan.vcf';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            window.URL.revokeObjectURL(url);
-        }
-    </script>
 </body>
 </html>
