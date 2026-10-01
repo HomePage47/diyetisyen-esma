@@ -76,25 +76,30 @@
             padding: 0 24px 20px;
             text-align: center;
             position: relative;
-            margin-top: -50px;
+            margin-top: -55px;
             z-index: 2;
             border-bottom: 1px solid var(--border-color);
         }
 
-        /* Logo Stili (Derinlik Efektli) */
+        /* Logo Stili */
         .logo-badge {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #2a5c43 0%, #112a20 100%);
-            color: #fff;
+            width: 100px;
+            height: 100px;
+            background: #ffffff;
+            color: var(--accent-green);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 12px;
-            font-size: 1.8rem;
-            box-shadow: 0 12px 30px rgba(17, 42, 32, 0.35), inset 0 2px 5px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 14px 35px rgba(35, 78, 56, 0.15), inset 0 0 0 2px var(--border-color);
             border: 4px solid #ffffff;
+            position: relative;
+        }
+
+        /* İçerideki kalbin boyutu büyütüldü */
+        .logo-badge i {
+            font-size: 2.8rem;
         }
 
         .badge-title {
@@ -115,7 +120,7 @@
             margin-bottom: 8px;
         }
 
-        /* Çizgi - Filiz/Logo İkonu - Çizgi Tasarımı */
+        /* Çizgi - Kalp İkonu - Çizgi Tasarımı */
         .name-divider {
             display: flex;
             align-items: center;
@@ -133,7 +138,7 @@
 
         .name-divider .leaf-icon {
             color: var(--accent-green);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         /* Slogan Stili */
@@ -250,6 +255,11 @@
         .contact-icon.email { background: #b85d41; }
         .contact-icon.location { background: #22706b; }
 
+        .contact-details {
+            flex: 1;
+            min-width: 0;
+        }
+
         .contact-details h4 {
             font-size: 0.65rem;
             color: var(--text-muted);
@@ -278,7 +288,8 @@
             font-size: 0.92rem;
             font-weight: 600;
             color: var(--primary-dark);
-            word-break: break-all;
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
 
         /* Çalışma Saatleri Kutusu */
@@ -382,15 +393,15 @@
         <!-- Başlık ve Logo Alanı -->
         <div class="header-content">
             <div class="logo-badge">
-                <i class="fa-solid fa-seedling"></i>
+                <i class="fa-solid fa-heart-pulse" style="color: #3a7d5c;"></i>
             </div>
             <div class="badge-title">Diyetisyen</div>
             <h1>Esma Tan</h1>
             
-            <!-- Çizgi - Filiz İkonu - Çizgi Tasarımı -->
+            <!-- Çizgi - Kalp İkonu - Çizgi Tasarımı -->
             <div class="name-divider">
                 <span class="line"></span>
-                <i class="fa-solid fa-seedling leaf-icon"></i>
+                <i class="fa-solid fa-heart leaf-icon"></i>
                 <span class="line"></span>
             </div>
 
