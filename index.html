@@ -97,7 +97,6 @@
             position: relative;
         }
 
-        /* İçerideki kalbin boyutu büyütüldü */
         .logo-badge i {
             font-size: 2.8rem;
         }
@@ -220,9 +219,9 @@
             display: flex;
             align-items: center;
             background: #ffffff;
-            padding: 14px 16px;
-            border-radius: 16px;
-            margin-bottom: 12px;
+            padding: 10px 14px; /* İç kenar boşlukları azaltıldı */
+            border-radius: 14px;
+            margin-bottom: 10px;
             text-decoration: none;
             color: var(--text-main);
             transition: all 0.25s ease;
@@ -238,16 +237,16 @@
         }
 
         .contact-icon {
-            width: 42px;
-            height: 42px;
+            width: 38px;
+            height: 38px;
             background: var(--primary-green);
             color: #fff;
-            border-radius: 12px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
-            font-size: 1.05rem;
+            margin-right: 12px;
+            font-size: 0.95rem;
             flex-shrink: 0;
             box-shadow: 0 4px 10px rgba(35, 78, 56, 0.2);
         }
@@ -260,34 +259,43 @@
             min-width: 0;
         }
 
+        /* Belirgin, Şık Başlıklar */
         .contact-details h4 {
-            font-size: 0.65rem;
-            color: var(--text-muted);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.72rem;
+            color: var(--primary-green);
             text-transform: uppercase;
-            letter-spacing: 1.2px;
-            margin-bottom: 3px;
-            font-weight: 600;
+            letter-spacing: 1.5px;
+            margin-bottom: 2px;
+            font-weight: 700;
         }
 
+        /* Adres Satırları */
         .address-main {
-            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
             color: var(--primary-dark);
             display: block;
-            font-size: 0.88rem;
+            font-size: 0.82rem;
+            line-height: 1.35;
         }
 
         .address-sub {
-            font-size: 0.8rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.76rem;
             color: var(--text-muted);
             font-weight: 500;
             display: block;
-            margin-top: 2px;
+            margin-top: 1px;
         }
 
+        /* Telefon, E-posta ve Adres İçerik Metinleri */
         .contact-details p {
-            font-size: 0.92rem;
-            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 500;
             color: var(--primary-dark);
+            letter-spacing: 0.3px;
             word-break: break-word;
             overflow-wrap: break-word;
         }
@@ -296,7 +304,7 @@
         .hours-box {
             background: #ffffff;
             border-radius: 18px;
-            padding: 18px;
+            padding: 16px 18px;
             margin-bottom: 20px;
             border: 1px solid var(--border-color);
             position: relative;
@@ -320,7 +328,7 @@
             font-size: 0.88rem;
             font-weight: 700;
             color: var(--primary-green);
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             letter-spacing: 0.3px;
         }
 
@@ -333,14 +341,14 @@
         .hours-table {
             display: flex;
             flex-direction: column;
-            gap: 7px;
+            gap: 6px;
         }
 
         .hours-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.83rem;
+            font-size: 0.82rem;
             padding: 3px 0;
             border-bottom: 1px dashed #edf4f0;
         }
