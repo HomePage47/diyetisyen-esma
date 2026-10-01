@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diyetisyen Esma Tan | Dijital Kartvizit</title>
+    <!-- Google Fonts - Zarif Fontlar -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome İkonları -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #f7f5ef;
+            --card-bg: #ffffff;
+            --primary-dark: #1b4332;
+            --primary-green: #2d6a4f;
+            --accent-green: #52b788;
+            --text-main: #2b2b2b;
+            --text-muted: #666666;
+            --border-color: #e2ede5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 15px;
+        }
+
+        .phone-container {
+            width: 100%;
+            max-width: 440px;
+            background: var(--card-bg);
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(27, 67, 50, 0.08);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        /* Üst Header / Logo Alanı */
+        .header {
+            background: linear-gradient(135deg, #e9f5ed 0%, #f7f5ef 100%);
+            padding: 30px 20px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary-green);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            font-style: italic;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        /* İletişim Listesi */
+        .contact-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            background: #faf8f5;
+            padding: 12px 16px;
+            border-radius: 14px;
+            margin-bottom: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.2s ease;
+            border: 1px solid #f0eee6;
+        }
+
+        .contact-item:hover {
+            background: #f0f7f2;
+            border-color: var(--accent-green);
+            transform: translateY(-2px);
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-green);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-icon.instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        }
+
+        .contact-icon.email { background: #ea4335; }
+        .contact-icon.location { background: #34a853; }
+
+        .contact-details h4 {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .contact-details p {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            word-break: break-all;
+        }
+
+        /* Çalışma Saatleri Kutusu */
+        .hours-box {
+            background: #f4f8f5;
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 25px;
+            border: 1px solid #d8e8dc;
+        }
+
+        .hours-title {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+        }
+
+        .hours-title i {
+            margin-right: 8px;
+            color: var(--primary-green);
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px 12px;
+            font-size: 0.85rem;
+        }
+
+        .day-row {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-muted);
+            padding: 3px 0;
+            border-bottom: 1px dashed #e2ede5;
+        }
+
+        .day-row span:last-child {
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        /* Butonlar */
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 14px;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-dark);
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 12px rgba(27, 67, 50, 0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-green);
+        }
+
+        .footer-quote {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 0.85rem;
+            color: var(--primary-green);
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="phone-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="badge">Diyetisyen</div>
+            <h1>Esma Tan</h1>
+            <div class="subtitle">Sağlıklı Beslenme • Daha İyi Bir Sen</div>
+        </div>
+
+        <!-- İçerik -->
+        <div class="content">
+            
+            <!-- İletişim Bilgileri -->
+            <ul class="contact-list">
+                <!-- Telefon -->
+                <a href="tel:05050903494" class="contact-item">
+                    <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                    <div class="contact-details">
+                        <h4>Telefon</h4>
+                        <p>0505 090 34 94</p>
+                    </div>
+                </a>
+
+                <!-- E-posta -->
+                <a href="mailto:dyt.esmatan@gmail.com" class="contact-item">
+                    <div class="contact-icon email"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="contact-details">
+                        <h4>E-Posta</h4>
+                        <p>dyt.esmatan@gmail.com</p>
+                    </div>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://instagram.com/dyt.esmatan" target="_blank" class="contact-item">
+                    <div class="contact-icon instagram"><i class="fa-brands fa-instagram"></i></div>
+                    <div class="contact-details">
+                        <h4>Instagram</h4>
+                        <p>@dyt.esmatan</p>
+                    </div>
+                </a>
+
+                <!-- Adres -->
+                <a href="https://maps.google.com/?q=Hürriyet+Mah.+İstasyon+Cd.+No:28+Kat:1+Daire:2+Tire+İzmir" target="_blank" class="contact-item">
+                    <div class="contact-icon location"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="contact-details">
+                        <h4>Ofis Adresi</h4>
+                        <p>Hürriyet Mah. İstasyon Cd. No:28 Kat:1 Daire:2, Tire / İzmir</p>
+                    </div>
+                </a>
+            </ul>
+
+            <!-- Çalışma Saatleri Tablosu -->
+            <div class="hours-box">
+                <div class="hours-title">
+                    <i class="fa-regular fa-clock"></i> Çalışma Saatleri
+                </div>
+                <div class="hours-grid">
+                    <div class="day-row"><span>Pazartesi</span><span>08:30 - 19:30</span></div>
+                    <div class="day-row"><span>Salı</span><span>08:30 - 12:30</span></div>
+                    <div class="day-row"><span>Çarşamba</span><span>08:30 - 19:30</span></div>
+                    <div class="day-row"><span>Perşembe</span><span>12:00 - 19:30</span></div>
+                    <div class="day-row"><span>Cuma</span><span>08:30 - 19:30</span></div>
+                    <div class="day-row"><span>Cumartesi</span><span>08:30 - 13:30</span></div>
+                </div>
+            </div>
+
+            <!-- Rehbere Kaydet Butonu -->
+            <div class="actions">
+                <button class="btn btn-primary" onclick="downloadVCard()">
+                    <i class="fa-solid fa-user-plus"></i> Rehbere Kaydet
+                </button>
+            </div>
+
+            <div class="footer-quote">
+                "Doğru beslen, sağlıklı yaşa... ♡"
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Rehbere Ekleme (VCard) Scripti -->
+    <script>
+        function downloadVCard() {
+            const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:Dyt. Esma Tan
+N:Tan;Esma;;Dyt.;
+ORG:Diyetisyen Esma Tan
+TITLE:Diyetisyen
+TEL;TYPE=WORK,VOICE:05050903494
+EMAIL;TYPE=INTERNET:dyt.esmatan@gmail.com
+URL;TYPE=Instagram:https://instagram.com/dyt.esmatan
+ADR;TYPE=WORK:;;Hürriyet Mah. İstasyon Cd. No:28 Kat:1 Daire:2;Tire;İzmir;;Türkiye
+NOTE:Sağlıklı beslenme daha iyi bir sen.
+END:VCARD`;
+
+            const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Dyt_Esma_Tan.vcf';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
